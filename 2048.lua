@@ -205,7 +205,7 @@ function newGame()
     if event=="key" then
       if key==keys.y then return true end
       if key==keys.n then
-        shell.run("store")
+        shell.run("home")
         return false 
       end
     end

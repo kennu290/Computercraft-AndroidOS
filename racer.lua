@@ -606,7 +606,7 @@ if err == "Terminated" then
 print("Terminated")
 else
 if ok then
-shell.run("store")
+shell.run("home")
 else
   term.setBackgroundColor(colors.red)
   term.setTextColor(colors.white)
@@ -631,13 +631,11 @@ else
   term.setTextColor(colors.white)
   term.setBackgroundColor(colors.red)
   print()
-  print("Please report at cc forums!")
+
 
   print("Press any key to continue!")
   os.pullEvent("key")
-  term.setBackgroundColor(colors.black)
-  term.clear()
-  term.setCursorPos(1,1)
+  shell.run("home")
 --  print("--Program:end--")
   return
 end 
