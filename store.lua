@@ -1,3 +1,4 @@
+os.loadAPI("json")
 w, h = term.getSize()
 paintutils.drawFilledBox(1, 1, w, h, colors.white)
 paintutils.drawFilledBox(1, 1, w, 1, colors.gray)
@@ -10,15 +11,55 @@ paintutils.drawFilledBox(16,4,23,6, colors.blue)
 
 paintutils.drawFilledBox(16,9,23,11, colors.blue)
 
-term.setCursorPos(0,0)
+term.setCursorPos(4,4)
+print(" Racer!")
+term.setCursorPos(4,6)
+print(" 25 KST")
+
+term.setCursorPos(16,4)
+print("  2048")
+term.setCursorPos(16,6)
+print(" 25 KST")
+
+function money()
+
+
+end
 
 while true do
     local event, button, xPos, yPos = os.pullEvent("mouse_click")
     if (xPos > 4 and xPos < 11) and (yPos > 4 and yPos < 6) then
-        --APP 1 SELECTED
-    elseif (xPos > 4 and xPos < 11) and (yPos > 9 and yPos < 11) then
-        --APP 2 SELECTED
+        --racer
+        local h = fs.open("/store_keys.lua", "r")
+        local data = h.readAll()
+        h.close()
+        if string.find(data, "racer") then
+            term.clear()
+        else
+            --krist stuffs
+            local h = fs.open("/store_keys.lua", "a")
+            h.writeLine("racer")
+            h.close()
+            shell.run("store")
+            
+    end
+
     elseif (xPos > 16 and xPos < 23) and (yPos > 4 and yPos < 6) then
+        --2048
+        local h = fs.open("/store_keys.lua", "r")
+        local data = h.readAll()
+        h.close()
+        if string.find(data, "2048") then
+            term.clear()
+        else
+            --krist stuffs
+            local h = fs.open("/store_keys.lua", "a")
+            h.writeLine("2048")
+            h.close()
+            shell.run("store")
+    end
+
+    elseif (xPos > 4 and xPos < 11) and (yPos > 9 and yPos < 11) then
         --APP 3 SELECTED
     elseif (xPos > 16 and xPos < 23) and (yPos > 9 and yPos < 11) then
         --APP 4 SELECTED
