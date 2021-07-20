@@ -21,8 +21,17 @@ while true do
     elseif (xPos > 4 and xPos < 11) and (yPos > 6 and yPos < 8) then
         term.setBackgroundColor(colors.black)
         term.clear()
-        os.sleep(5)
-        os.reboot()
+        fs.delete("home.lua")
+        fs.delete("startup.lua")
+        fs.delete("LOGO.lua")
+        fs.delete("2048.lua")
+        fs.delete("2048.icon")
+        fs.delete("json")
+        fs.delete("racer.lua")
+        fs.delete("store.lua")
+        fs.delete("tracker.lua")
+        shell.run("wget", "https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/installer.lua")
+        shell.run("installer.lua")
 
     elseif (xPos > 16 and xPos < 23) and (yPos > 6 and yPos < 8) then
         shell.run("settings.lua")
