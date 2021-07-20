@@ -34,12 +34,13 @@ while true do
         local data = h.readAll()
         h.close()
         if string.find(data, "racer") then
-            term.clear()
+            shell.run("racer.lua")
         else
             --krist stuffs
             local h = fs.open("/store_keys.lua", "a")
             h.writeLine("racer")
             h.close()
+            shell.run("wget https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/racer.lua?token=ARSWXRE6HD4NDQCA2AGWRBDA63MR2")
             shell.run("store")
             
     end
@@ -50,12 +51,14 @@ while true do
         local data = h.readAll()
         h.close()
         if string.find(data, "2048") then
-            term.clear()
+            shell.run("2048.lua")
         else
             --krist stuffs
             local h = fs.open("/store_keys.lua", "a")
             h.writeLine("2048")
             h.close()
+            shell.run("wget https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/2048.lua?token=ARSWXRGH4TJMRX7NI5XB643A63MSG")
+            shell.run("wget https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/2048.icon?token=ARSWXRBECK2FBJYTKB6HZNLA63MV6")
             shell.run("store")
     end
 

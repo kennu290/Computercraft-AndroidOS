@@ -1,3 +1,4 @@
+os.pullEvent = os.pullEventRaw
 --loadscreen:
 function loadscreen()
   term.setBackgroundColor(colors.brown)

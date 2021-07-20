@@ -1,7 +1,7 @@
 -- 2048
 -- Clone by Richard (Rich73)
 -- Hacked together 10/04/2014
-
+os.pullEvent = os.pullEventRaw
 g = { }
 tiles = { }
 tiles[1]  = {"    ", 1}
