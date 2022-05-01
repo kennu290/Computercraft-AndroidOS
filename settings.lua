@@ -1,3 +1,5 @@
+realCode = "564372"
+
 function factoryReset()
     w, h = term.getSize()
     paintutils.drawFilledBox(1, 1, w, h, colors.lightGray)
@@ -44,6 +46,14 @@ function devAccess()
     paintutils.drawFilledBox(1, 1, w, h, colors.lightGray)
     paintutils.drawFilledBox(1, 1, w, 1, colors.gray)
     paintutils.drawFilledBox(1, 19, w, 19, colors.black)
+    paintutils.drawFilledBox(4,6,11,8, colors.lime)
+    term.setCursorPos(5,7)
+    print("Affirm")
+    paintutils.drawFilledBox(16,6,23,8, colors.red)
+    term.setCursorPos(17,7)
+    print("Cancel")
+    term.setBackgroundColor(colors.black)
+    
 
     term.setCursorPos(1, 19)
     print("Back")
@@ -51,10 +61,21 @@ while true do
     local event, button, xPos, yPos = os.pullEvent("mouse_click")
     if (yPos == 19) then
         shell.run("settings.lua")
+    elseif (xPos > 4 and xPos < 11) and (yPos > 6 and yPos < 8) then
+        --DEV ACCESS ENABLED!
+        term.setBackgroundColor(colors.lightGray)
+        local code = read("*")
+        if (realCode == code) then
+            print ("epic")
+            shell.run("home.lua")
+        else
+            shell.run("settings.lua")
         end
-    end
+    elseif (xPos > 16 and xPos < 23) and (yPos > 6 and yPos < 8) then
+        shell.run("settings.lua")
+        end
+    end  
 end
-
 
 
 
