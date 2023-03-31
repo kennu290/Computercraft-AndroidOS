@@ -8,6 +8,5 @@ shell.run("wget", "https://raw.githubusercontent.com/kennu290/Computercraft-Andr
 shell.run("wget", "https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/settings.lua")
 shell.run("wget", "https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/startup.lua")
 shell.run("wget", "https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/store.lua")
-shell.run("wget", "https://raw.githubusercontent.com/kennu290/Computercraft-AndroidOS/main/store_keys.lua")
 os.sleep(5)
 os.reboot()
