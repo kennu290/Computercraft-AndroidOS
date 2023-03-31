@@ -1,4 +1,4 @@
-os.setComputerLabel("Samsung Galaxy Tab S7+")
+os.setComputerLabel("Android tablet")
 print("Rename Complete. Initiating Downloader!")
 
 fs.delete("settings.lua")
